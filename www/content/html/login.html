@@ -1,0 +1,41 @@
+{% extends "base_null.html" %}
+
+{% block content %}
+
+<h2>Login:</h2>
+    <form method="post">
+      <table>
+        <tr>
+          <td class="label">
+            Username
+          </td>
+          <td>
+            <input type="text" name="username" value="{{username}}">
+          </td>
+          <td class="error">
+            {{error_username}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Password
+          </td>
+          <td>
+            <input type="password" name="password" value="">
+          </td>
+          <td class="error">
+            {{error_password}}
+          </td>
+        </tr>
+
+      </table>
+      <br>
+      <input type="submit"> <a class="error">{{error_invalidLogin}}</a>
+    </form>
+    <br>    
+    <h3>Not registered?</h3>
+    <a href="/blog/register"><button type="submit">register</button></a>
+
+
+{% endblock %}

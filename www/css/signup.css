@@ -1,0 +1,17 @@
+*{
+	font-family: courier;
+}
+
+/*td{
+	border: 1px solid black;
+}
+*/
+
+input{
+	size: 10px;
+}
+
+.error{
+	color: red;
+	font-weight: bold;
+}

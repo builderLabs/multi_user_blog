@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Welcome, {{username}}!</h2>
+<h3>What would you like to do?</h3>
+
+<a href="/blog/"><button type="submit">main</button></a>
+<a href="/blog/newpost"><button type="submit">newpost</button></a>
+<a href="/blog/logout"><button type="submit">logout</button></a>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base_null.html" %}
+
+{% block content %}
+
+<h2>Register:</h2>
+    <form method="post">
+      <table>
+          <tr>
+              <td class="label">Username</td><td class="username"><input type = "text" name="username" value="{{username}}"></td><td class="error">{{error_username}}</td>
+          </tr>
+          <tr>
+              <td class="label">Password</td><td class="password"><input type = "password" name="password" value=""></td><td class="error">{{error_password}}</td>
+          </tr>
+          <tr>
+              <td class="label">Verify Password</td><td class="verify"><input type = "password" name="verify" value=""></td><td class="error">{{error_verify}}</td>
+          </tr>
+          <tr>
+              <td class="label">Email (Optional)</td><td class="email"><input type = "text" name="email" value=""></td><td class="error">{{error_email}}</td>
+          </tr>                    
+      </table>  
+      <br>
+      <input type="submit" class="regButton"><a class="error">    {{error_userexists}}</a>
+    </form>
+    <br>
+     <h3>Already registered?</h3>
+    <a href="/blog/login"><button type="submit">login</button></a>
+
+{% endblock %}

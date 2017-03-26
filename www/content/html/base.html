@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!--descriptive-->
+	<meta name="author" content="Ozan Akcin">	
+	<meta name="description" content="Udacity Multi-User Blog Project">
+	  
+	<!--functionality-->
+	<meta charset="utf-8">	  
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<meta name="mobile-web-app-capable" content="yes">	  
+	  	  
+	<!--project specific-->  
+	<title>CogWheel Blog</title>	
+
+	<!--fonts-->
+		
+	<!--styles-->	
+	<link type="text/css" rel="stylesheet" href="/www/css/main.css" />		
+
+</head>
+
+<body>
+	<div class="container">
+	  <a href="/blog/" class="main-title">The Cogwheel Blog</a>
+	  <br>
+	  <div align="center">
+	  	<a href="/blog/"><button type="submit">main</button></a>
+	  	<a href="/blog/newpost"><button type="submit">newpost</button></a>
+	  	<a href="/blog/logout"><button type="submit">logout</button></a>
+	  	<a href="/blog/help"><button type="submit">help</button></a>	  	
+	  </div>
+	  <br>
+	  <a type = "text">Logged in as: {{username}}</a>	  	  	  
+	  <hr class="titleDivider">
+	  <div id="content">
+		  {% block content %}
+		  {% endblock %}
+	  </div>
+	</div>
+</body>
+
+</html> 

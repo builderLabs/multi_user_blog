@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>add comment</h2>
+  <a href="/blog/"><button type="submit" class="cancel">cancel</button></a>
+    <form method="post">
+      <label>
+        <div>subject</div>
+          <input type="text" name = "subject" value="{{subject}}" readonly>        
+        <div>comment author</div>
+          <input type="text" name = "author" value="{{username}}" readonly>                
+      </label>
+
+      <label>
+        <div>comment</div>
+        <textarea name="content"></textarea>
+      </label>
+
+      <div class="error">{{error}}</div>
+
+      <input type="submit">
+    </form>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base_edit.html" %}
+
+{% block content %}
+ <div class="error">{{error}}</div>
+
+  <form class="popularity">
+     <a name = "like" value = "up" class="likes" href="/blog/{{post.key().id()}}/like">&uarr;: {{post.likes}}</a>     
+     <a name = "dislike" value = "down" class="dislikes" href="/blog/{{post.key().id()}}/dislike">&darr;: {{post.dislikes}}</a>      
+   </form>
+ <br>
+ <form class="article">
+    <div class="post-heading">
+        <div class="post-title"><a >{{post.subject}}</a></div>        
+        <div class="post-details">    	
+        	<a class="post-author">Author: {{post.author}}</a>
+        	<a class="post-posted">Posted: {{post.created.strftime("%b %d, %Y")}}</a>
+        	<a class="post-modified">Updated: {{post.last_modified.strftime("%b %d, %Y")}}</a>    	
+       	</div>    
+    </div>
+  <br>
+    <div class="post-content">
+    	{% for line in post.content.splitlines() %}
+    	   {{line}}<br>
+    	{% endfor %}
+    </div>	
+
+  <br>
+  </form>
+
+    <a href="/blog/{{post.key().id()}}/newcomment"><button type="submit">comment</button></a> 
+    <hr>
+  
+  <div class="comment-area">
+    {% for c in comments %}
+        <div class="comment-info">Comment From: {{c.username}} - {{c.last_modified.strftime("%Y%m%d %H:%M:%S")}}
+          <input type = "hidden" name="comment_id" value="{{c.key().id()}}">
+          <!-- <a href="/blog/{{c.key().id()}}/editcomment"><button type="submit" value="{{c.key().id()}}">edit</button></a> -->          
+        </div>
+        
+        <br>
+        
+        <div class="comment-content">
+          {% for line in c.content.splitlines() %}
+            {{line}}<br>
+          {% endfor %}
+        </div>
+          <br>
+          <a href="/blog/{{c.key().id()}}/editcomment"><button type="submit" value="{{c.key().id()}}">edit</button></a>
+          <a href="/blog/{{c.key().id()}}/deletecomment"><button type="submit" value="{{c.key().id()}}">delete</button></a>
+        <hr class = "comment-divider">
+    {% endfor %}
+  </div>
+ 
+{% endblock %}

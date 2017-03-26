@@ -1,0 +1,128 @@
+body {
+    font-family: Courier;
+    font-size: 14px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;    
+}
+
+form{
+    width: 100%;
+}
+
+input{
+    width: 150px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+}
+
+label + label {
+    margin-top: 20px;
+}
+
+textarea {
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+input[type=submit] {
+  height: 2vmax;
+  width:  6vmax;
+  font-size: 2vmin;    
+}
+
+.error, .message {
+    color: red;
+    font-weight: bold;
+}
+
+.main-title {
+    display: block;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.info{
+    position: relative;
+    right: 0px;
+    padding-left: 10vw;
+}
+
+.post-heading {
+    position: relative;
+    border-bottom: 3px solid #666;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-author {
+    position: relative;
+    left: 0px;        
+}
+
+.post-posted{
+    position: relative;      
+    padding-left: 10vw;
+}
+
+.post-modified{
+    position: relative;    
+    padding-left: 10vw; 
+}
+
+.post-content {
+    margin-top: 5px;
+}
+
+.password{
+    width: 150px;
+}
+
+.regButton{
+    font-family: Courier;
+    font-size: 2px;
+    height: 2vh;
+}
+
+.uname{
+    width: 10%;
+}
+
+.comment-info{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.comment-area{
+    background-color: lightgray;
+}
+
+.comment-divider{
+    border: 1px dotted;
+}
+
+.likes{
+    color:green;
+}
+
+.dislikes{
+    color:red;
+}

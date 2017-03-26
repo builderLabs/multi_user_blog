@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="error">{{error}}</div>
+<form>
+  {% for p in posts %}
+
+  <div class="post-heading">
+
+   <form class="popularity">
+     <a name = "like" value = "up" class="likes">&uarr;: {{p.likes}}</a>     
+     <a name = "dislike" value = "down" class="dislikes">&darr;: {{p.dislikes}}</a>      
+   </form>
+     
+    <div class="post-title">
+    	<a href="/blog/{{p.key().id()}}">{{p.subject}}</a>     
+    </div>    
+    <div class="post-details">    	
+    	<a class="post-author">Author: {{p.author}}</a>
+    	<a class="post-posted">Posted: {{p.created.strftime("%b %d, %Y")}}</a>
+    	<a class="post-modified">Updated: {{p.last_modified.strftime("%b %d, %Y")}}</a>
+   	</div>         
+
+  </div>
+
+  <br>
+
+  <div class="post-content">
+
+  	{% for line in p.content.splitlines() %}
+  	   {{line}}<br>
+  	{% endfor %}    
+  
+  </div>
+
+  <br><br>
+  
+  {% endfor %}
+</form>
+{% endblock %}
